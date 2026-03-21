@@ -4,7 +4,7 @@ const User = require('../models/userModel')
 
 const signup = async (request, response) => {
   try {
-    const { username, email, password, roles } = request.body
+    const { username, email, password, role } = request.body
     if (!username || !email || !password)
       return response
         .status(400)
@@ -23,7 +23,7 @@ const signup = async (request, response) => {
       username,
       contactInformation: { email },
       hashedPassword,
-      roles,
+      role,
     })
     if (user)
       return response

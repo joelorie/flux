@@ -13,10 +13,10 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 6,
   },
-  roles: {
-    type: [String],
-    enum: ['buyer', 'seller', 'admin'],
-    default: ['buyer'],
+  role: {
+    type: String,
+    required: true,
+    default: 'buyer',
   },
   contactInformation: {
     email: {
